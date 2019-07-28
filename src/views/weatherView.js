@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 export function WeatherView(props) {
   const { weatherData, giphyData } = props;
+  const [gifNumber, changeGif] = useState(0);
   if (!weatherData || !giphyData) return null;
   const { weather, main, wind, name, visibility } = weatherData;
   const accessWeather = weather[0];
   const { data } = giphyData;
-  let gifNumber = Math.floor(Math.random() * data.length);
   return (
     <div>
       <section>
@@ -16,6 +16,7 @@ export function WeatherView(props) {
         <img
           src={data[gifNumber].images.original.url}
           alt={accessWeather.description}
+          onClick={() => changeGif(Math.floor(Math.random() * data.length))}
         />
       </section>
       <section>
