@@ -5,14 +5,17 @@ export function WeatherView(props) {
   const { weatherData, giphyData } = props;
   if (!weatherData || !giphyData) return null;
   const { weather, main, wind, name, visibility } = weatherData;
+  const accessWeather = weather[0];
+  const { data } = giphyData;
+  let gifNumber = Math.floor(Math.random() * data.length);
   return (
     <div>
       <section>
         <h1>{name}</h1>
-        <h3>It is currently: {weather[0].description}</h3>
+        <h3>It is currently: {accessWeather.description}</h3>
         <img
-          src={giphyData.data[0].images.original.url}
-          alt={weather[0].description}
+          src={data[gifNumber].images.original.url}
+          alt={accessWeather.description}
         />
       </section>
       <section>
