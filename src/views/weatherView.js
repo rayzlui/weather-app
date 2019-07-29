@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { GiphyContainer } from '../containers/giphyContainer';
 
 export function WeatherView(props) {
-  const { weatherData, giphyData } = props;
-  const [gifNumber, changeGif] = useState(0);
-  if (!weatherData || !giphyData) return null;
+  const { weatherData } = props;
+  if (!weatherData) return null;
   const { weather, main, wind, name, visibility } = weatherData;
   const accessWeather = weather[0];
-  const { data } = giphyData;
   return (
     <div>
       <section>
-        <h1>{name}</h1>
-        <h3>It is currently: {accessWeather.description}</h3>
-        <img
-          src={data[gifNumber].images.original.url}
-          alt={accessWeather.description}
-          onClick={() => changeGif(Math.floor(Math.random() * data.length))}
-        />
+        <h2>
+          {name} is currently {accessWeather.description}
+        </h2>
+        <GiphyContainer weather={accessWeather.description} />
       </section>
       <section>
         <h3>Current Temperature: {main.temp} F*</h3>
@@ -39,6 +35,5 @@ export function WeatherView(props) {
 
 WeatherView.propTypes = {
   weatherData: PropTypes.object,
-  giphyData: PropTypes.object,
   searchWeather: PropTypes.func,
 };
