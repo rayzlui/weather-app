@@ -5,9 +5,10 @@ export function SearchView(props) {
   const { searchWeather } = props;
   const ENTER_KEY = 13;
   return (
-    <>
-      <h3>Find Weather At</h3>
+    <div className="searchbar">
+      <h3 className="search__header">Find Weather At</h3>
       <input
+        className="search__inut"
         type="search"
         onKeyDown={event => {
           if (event.keyCode === ENTER_KEY) {
@@ -16,7 +17,7 @@ export function SearchView(props) {
           }
         }}
       />
-    </>
+    </div>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { Provider } from 'react-redux';
 import { RootContainer } from './containers/rootContainer';
 import { configureStore } from './configureStore';
