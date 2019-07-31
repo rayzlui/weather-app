@@ -5,9 +5,9 @@ $greyish: rgb(161, 161, 161);
 .background {
   height: 100%;
   position: fixed;
-  right: 10%;
+  right: 15%;
   margin: 0;
-  width: 60%;
+  width: 55%;
   text-align: center;
 }
 
@@ -29,11 +29,11 @@ $greyish: rgb(161, 161, 161);
   position: fixed;
   right: 0;
   border: 0.5% solid $greyish;
-  width: 10%;
+  width: 15%;
   height: 100%;
   text-align: left;
   font-size: larger;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .searchbar--intro {
@@ -41,20 +41,25 @@ $greyish: rgb(161, 161, 161);
   top: 0;
   left: 35%;
   width: 30%;
-  height: 20%;
+  height: 15%;
   opacity: 0.9;
   background-image: linear-gradient(to left bottom, white, grey);
   border: 1px black solid;
   border-radius: 2px;
-  text-align: center
+  text-align: center;
+  padding-top: 20px;
 }
 
-.searchbar__header {
+.search__header {
   margin: 0;
+  font-size: 30px;
 }
 
-.searchbar_input {
+.search__input {
   margin: 0;
+  padding: 10px;
+  font-size: 20px;
+  border: 2px yellow solid;
 }
 
 .container {
