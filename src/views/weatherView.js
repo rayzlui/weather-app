@@ -6,11 +6,15 @@ export function WeatherView(props) {
   if (!weatherData) return null;
   const { weather, main, wind, name, visibility } = weatherData;
   const accessWeather = weather[0];
+  let weatherDescription;
+  if (accessWeather.description.split(' ').includes('rain')) {
+    weatherDescription = `YES ITS RAINING AT ${name.toUpperCase()}`;
+  } else {
+    weatherDescription = `IT IS CURRENTLY ${accessWeather.description.toUpperCase()} AT ${name.toUpperCase()}`;
+  }
   return (
     <div className="weather-container">
-      <h2 className="weather__header">
-        {name} is currently {accessWeather.description}
-      </h2>
+      <h2 className="weather__header">{weatherDescription}</h2>
       <section className="weather__temp">
         <h3>Current Temperature: {main.temp} F*</h3>
         <p>

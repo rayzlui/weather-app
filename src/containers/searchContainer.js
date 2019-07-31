@@ -2,6 +2,12 @@ import { connect } from 'react-redux';
 import { fetchWeather } from '../actions/actions';
 import { SearchView } from '../views/searchView';
 
+function mapStateToProps(state) {
+  return {
+    intro: state.weatherData.data === null,
+  };
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     searchWeather: location => dispatch(fetchWeather(location)),
@@ -9,6 +15,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export const SearchContainer = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(SearchView);

@@ -3,53 +3,71 @@ $greyish: rgb(161, 161, 161);
 
 
 .background {
-  height: 90%;
-  position: absolute;
-  right: 0;
+  height: 100%;
+  position: fixed;
+  right: 10%;
   margin: 0;
-  top: 10%;
-  width: 50%;
+  width: 60%;
   text-align: center;
 }
 
 
 .weather-container {
-  background-image: radial-gradient(white, navy);
-  height: 90%;
-  position: absolute;
+  background-image: linear-gradient(to bottom left, white, blue);
+  height: 100%;
+  position: fixed;
   left: 0;
-  top: 10%;
-  width: 50%;
-  text-align: center;
-  opacity: 0.7;
+  top: 0%;
+  width: 30%;
+  text-align: right;
   border-radius: 2px;
+  padding-left: 2px;
 }
 
 .searchbar {
-  background-color: $white;
-  opacity: 0.8;
-  margin-top: 0;
-  position: sticky;
-  top: 0;
-  left: 15%;
-  border: 2px solid $greyish;
-  width: 100%;
-  height: 10%;
-  z-index: 10;
-  text-align: center;
+  background-image: linear-gradient(to bottom right, white, blue);
+  position: fixed;
+  right: 0;
+  border: 0.5% solid $greyish;
+  width: 10%;
+  height: 100%;
+  text-align: left;
   font-size: larger;
   font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 10%;
+}
 
-  input {
-    width: 40%;
-    height: 20%;
-  }
-  
+.searchbar--intro {
+  position: sticky;
+  top: 0;
+  width: 30%;
+  height: 20%;
+  opacity: 0.8;
+  background-image: linear-gradient(to left bottom, white, grey);
+  border: 1px black solid;
+  border-radius: 2px;
+  text-align: center
+}
+
+.searchbar__header {
+  margin: 0;
+}
+
+.searchbar_input {
+  margin: 0;
 }
 
 .container {
   position: relative;
   height: 1000px;
   width: 100%;
+}
+
+.container--intro{
+  background-image: url("https://media0.giphy.com/media/xUPGcdhiQf2vbfDCyk/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 1000px;
+  width: 100%;
+  margin: 0;
+
 }

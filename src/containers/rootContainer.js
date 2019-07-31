@@ -1,14 +1,13 @@
-import { SearchContainer } from './searchContainer';
-import { GiphyContainer } from './giphyContainer';
-import React from 'react';
-import { WeatherContainer } from './weatherContainer';
+import { connect } from 'react-redux';
+import { RootView } from '../views/rootView';
 
-export function RootContainer() {
-  return (
-    <div className="container">
-      <SearchContainer />
-      <GiphyContainer />
-      <WeatherContainer />
-    </div>
-  );
+function mapStateToProps(state) {
+  return {
+    intro: state.weatherData.data === null,
+  };
 }
+
+export const RootContainer = connect(
+  mapStateToProps,
+  null,
+)(RootView);
