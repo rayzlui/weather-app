@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 
 export function GiphyView(props) {
   const [gifNumber, changeGif] = useState(0);
-  const { giphyData, weather } = props;
+  const { giphyData } = props;
   if (!giphyData) return null;
   const { data } = giphyData;
-
+  
   return (
     <img
+      className="background"
       src={data[gifNumber].images.original.url}
-      alt={weather}
       onClick={() => changeGif(Math.floor(Math.random() * data.length))}
-    />
+      alt="weather-gif"
+    ></img>
   );
 }
 
