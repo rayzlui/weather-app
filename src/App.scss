@@ -39,9 +39,10 @@ $greyish: rgb(161, 161, 161);
 .searchbar--intro {
   position: sticky;
   top: 0;
+  left: 35%;
   width: 30%;
   height: 20%;
-  opacity: 0.8;
+  opacity: 0.9;
   background-image: linear-gradient(to left bottom, white, grey);
   border: 1px black solid;
   border-radius: 2px;
@@ -69,5 +70,6 @@ $greyish: rgb(161, 161, 161);
   height: 1000px;
   width: 100%;
   margin: 0;
+  padding-top: 25%;
 
 }
