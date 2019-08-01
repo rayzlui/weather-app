@@ -49,7 +49,7 @@ describe('fetchWeather', () => {
       fetchMock.getOnce(mockBrokenUrl, 404);
       const expectedResult = [
         { type: actions.FETCH_WEATHER_START, url: mockBrokenUrl },
-        { type: actions.FETCH_ERROR, error: mockError },
+        { type: actions.FETCH_WEATHER_ERROR, error: mockError },
       ];
 
       const store = mockStore();
@@ -91,7 +91,7 @@ describe('fetchWeather', () => {
         fetchMock.getOnce(mockGiphyUrl, 404);
         const expectedResult = [
           { type: actions.FETCH_GIPHY_START, url: mockGiphyUrl },
-          { type: actions.FETCH_ERROR, error: mockError },
+          { type: actions.FETCH_GIPHY_ERROR, error: mockError },
         ];
 
         const store = mockStore();

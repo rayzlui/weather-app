@@ -1,8 +1,9 @@
 import {
-  fetchError,
+  fetchWeatherError,
   fetchWeatherStart,
   fetchGiphyStart,
   fetchGiphySuccess,
+  fetchGiphyError,
   fetchWeatherSuccess,
 } from './actions';
 import * as actions from './actionsTypes';
@@ -26,6 +27,17 @@ describe('fetchWeatherSuccess', () => {
   });
 });
 
+describe('fetchWeatherError', () => {
+  it('should return object', () => {
+    const error = { status: 404, statusText: 'Not Found', url: 'some_url' };
+    const wrapper = fetchWeatherError(error);
+    expect(wrapper).toEqual({
+      type: actions.FETCH_WEATHER_ERROR,
+      error: error,
+    });
+  });
+});
+
 describe('fetchGiphyStart', () => {
   it('should return object', () => {
     const url = 'https://apy.giphy.co';
@@ -42,10 +54,10 @@ describe('fetchGiphySuccess', () => {
   });
 });
 
-describe('fetchError', () => {
+describe('fetchGiphyError', () => {
   it('should return object', () => {
     const error = { status: 404, statusText: 'Not Found', url: 'some_url' };
-    const wrapper = fetchError(error);
-    expect(wrapper).toEqual({ type: actions.FETCH_ERROR, error: error });
+    const wrapper = fetchGiphyError(error);
+    expect(wrapper).toEqual({ type: actions.FETCH_GIPHY_ERROR, error: error });
   });
 });

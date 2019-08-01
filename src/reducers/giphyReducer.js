@@ -1,10 +1,10 @@
 import {
   FETCH_GIPHY_START,
   FETCH_GIPHY_SUCCESS,
-  FETCH_ERROR,
+  FETCH_GIPHY_ERROR,
 } from '../actions/actionsTypes';
 
-const initialState = {
+export const initialState = {
   isFetching: false,
   data: null,
   error: null,
@@ -25,7 +25,7 @@ export function giphyReducer(state = initialState, action) {
         data: action.data,
         error: null,
       });
-    case FETCH_ERROR:
+    case FETCH_GIPHY_ERROR:
       return Object.assign({}, state, {
         isFetching: false,
         data: null,
