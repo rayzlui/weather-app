@@ -1,31 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { InputView } from './inputView'
 
 export function SearchView(props) {
-  const { searchWeather, intro } = props;
-  const ENTER_KEY = 13;
+  const { searchWeather, data } = props;
   let className = 'searchbar';
-  if (intro) {
+  if (!data) {
     className = 'searchbar--intro';
   }
   return (
     <div className={className}>
       <h3 className="search__header">IS IT RAINING AT </h3>
-      <input
-        className="search__input"
-        type="search"
-        onKeyDown={event => {
-          if (event.keyCode === ENTER_KEY) {
-            searchWeather(event.target.value);
-            event.target.value = null;
-          }
-        }}
-      />
+      <InputView searchWeather={searchWeather} />
     </div>
   );
 }
 
 SearchView.propTypes = {
   searchWeather: PropTypes.func,
-  intro: PropTypes.bool,
+  data: PropTypes.object,
 };

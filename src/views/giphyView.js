@@ -6,10 +6,10 @@ export function GiphyView(props) {
   const { giphyData } = props;
   if (!giphyData) return null;
   const { data } = giphyData;
-  
+
   return (
     <img
-      className="background"
+      className="image"
       src={data[gifNumber].images.original.url}
       onClick={() => changeGif(Math.floor(Math.random() * data.length))}
       alt="weather-gif"
