@@ -33,10 +33,10 @@ describe('SearchView', () => {
       expect(error).toHaveLength(0);
     });
 
-    it('should have fun message', ()=>{
-      const fun = wrapper.find('.fun-message')
-      expect(fun.text()).toEqual('hey where u from')
-    })
+    it('should have fun message', () => {
+      const fun = wrapper.find('.fun-message');
+      expect(fun.text()).toEqual('hey where u from');
+    });
   });
 
   describe('weather info', () => {
@@ -67,8 +67,6 @@ describe('SearchView', () => {
       const error = wrapper.find('.error-message');
       expect(error).toHaveLength(0);
     });
-
-    
   });
 
   describe('isFetching is true', () => {
@@ -110,12 +108,11 @@ describe('SearchView', () => {
         expect(errorMessage.text()).toEqual(
           'Dear Kind Person. We are unable to find the city, please try again. Or please use a zip code if you have tried multiple times.',
         );
-        
       });
-      it('should not have fun message', ()=>{
-        const fun = wrapper.find('.fun-message')
-        expect(fun).toHaveLength(0)
-      })
+      it('should not have fun message', () => {
+        const fun = wrapper.find('.fun-message');
+        expect(fun).toHaveLength(0);
+      });
     });
   });
 });

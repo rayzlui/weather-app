@@ -32,7 +32,9 @@ describe('WeatherView', () => {
       it('should display temp', () => {
         const tempSection = wrapper.find('.weather__temp');
         const header = tempSection.find('h3');
-        expect(header.text()).toEqual(`Current Temperature: ${rain.main.temp} F*`);
+        expect(header.text()).toEqual(
+          `Current Temperature: ${rain.main.temp} F*`,
+        );
         const tempRange = tempSection.find('p');
         expect(tempRange.text()).toEqual(
           `Low: ${rain.main.temp_min} to High: ${rain.main.temp_max}`,

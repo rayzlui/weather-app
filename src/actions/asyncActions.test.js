@@ -1,4 +1,4 @@
-import { fetchWeather, fetchGiphy, fetchWeatherStart } from './actions';
+import { fetchWeather, fetchGiphy } from './actions';
 import * as actions from './actionsTypes';
 import configureMockStore from 'redux-mock-store';
 import fetchMock from 'fetch-mock';

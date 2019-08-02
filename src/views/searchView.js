@@ -13,7 +13,7 @@ export function SearchView(props) {
   if (!data) {
     className = 'searchbar--intro';
     header = 'IS IT FUCKING RAINING';
-    message = <p className="fun-message">hey where u from</p>
+    message = <p className="fun-message">hey where u from</p>;
   }
 
   if (error) {

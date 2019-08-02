@@ -1,6 +1,5 @@
 import * as actions from '../actions/actionsTypes';
-import {initialState, weatherReducer} from './weatherReducer';
-
+import { initialState, weatherReducer } from './weatherReducer';
 
 describe('weatherReducer', () => {
   it('should handle action', () => {
