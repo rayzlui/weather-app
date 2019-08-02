@@ -34,10 +34,20 @@ $greyish: rgb(161, 161, 161);
   text-align: left;
   font-size: larger;
   font-family: Arial, Helvetica, sans-serif;
+  input {
+    width: 100%
+  }
 }
 
 .error-message{
   font-size: smaller;
+  color: red;
+}
+
+.fun-message{
+  font-size: smaller;
+  color: purple;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .searchbar--intro {
@@ -61,7 +71,8 @@ $greyish: rgb(161, 161, 161);
 .search__input {
   padding: 6px 10px;
   border: 1px black solid;
-  width: 50%;
+  width: 80%;
+  text-align: center;
   font-size: 23px;
 }
 

@@ -5,34 +5,38 @@ import { InputView } from './inputView';
 export function SearchView(props) {
   const { searchWeather, weatherData } = props;
   const { data, error, isFetching } = weatherData;
-  let display;
+
   let className = 'searchbar';
-  let header = 'IS IT FUCKING RAINING';
-  let errorMess = null;
+  let header = 'IS IT FUCKING RAINING AT';
+  let message = null;
+
   if (!data) {
     className = 'searchbar--intro';
-  } else {
-    header = 'IS IT ALSO FUCKING RAINING AT';
+    header = 'IS IT FUCKING RAINING';
+    message = <p className="fun-message">hey where u from</p>
   }
+
   if (error) {
-    errorMess = (
+    message = (
       <p className="error-message">
-        Unable to find city, please try again. Or please use a zip code if you
-        you have tried multiple times.
+        Dear Kind Person. We are unable to find the city, please try again. Or
+        please use a zip code if you have tried multiple times.
       </p>
     );
   }
+
+  let display = (
+    <>
+      <h1 className="search__header">{header}</h1>
+      {message}
+      <InputView searchWeather={searchWeather} />
+    </>
+  );
+
   if (isFetching) {
-    display = <h1>FUCKING SEARCHING</h1>;
-  } else {
-    display = (
-      <>
-        <h1 className="search__header">{header}</h1>
-        {errorMess}
-        <InputView searchWeather={searchWeather} />
-      </>
-    );
+    display = <h1 className="fetching-message">FUCKING SEARCHING</h1>;
   }
+
   return <div className={className}>{display}</div>;
 }
 

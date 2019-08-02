@@ -26,7 +26,7 @@ describe('WeatherView', () => {
       const wrapper = shallow(<WeatherView weatherData={rain} />);
       it('should have rain header', () => {
         const header = wrapper.find('.weather__header');
-        expect(header.text()).toEqual('YES ITS RAINING AT NEW ORLEANS');
+        expect(header.text()).toEqual('YES ITS FUCKING RAINING IN NEW ORLEANS');
       });
 
       it('should display temp', () => {
