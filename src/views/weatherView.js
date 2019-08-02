@@ -13,7 +13,7 @@ export function WeatherView(props) {
       .split(' ')
       .includes('rain')
   ) {
-    weatherDescription = `YES ITS RAINING AT ${name.toUpperCase()}`;
+    weatherDescription = `YES ITS FUCKING RAINING IN ${name.toUpperCase()}`;
   } else {
     weatherDescription = `IT IS CURRENTLY ${accessWeather.description.toUpperCase()} IN ${name.toUpperCase()}`;
   }

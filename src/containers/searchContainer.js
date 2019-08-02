@@ -4,7 +4,7 @@ import { SearchView } from '../views/searchView';
 
 function mapStateToProps(state) {
   return {
-    data: state.weatherData.data,
+    weatherData: state.weatherData,
   };
 }
 

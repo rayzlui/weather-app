@@ -1,6 +1,7 @@
 import { SearchContainer } from '../containers/searchContainer';
 import { GiphyContainer } from '../containers/giphyContainer';
 import React from 'react';
+
 import { WeatherContainer } from '../containers/weatherContainer';
 import PropTypes from 'prop-types';
 

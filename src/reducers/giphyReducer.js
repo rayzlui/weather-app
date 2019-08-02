@@ -2,6 +2,7 @@ import {
   FETCH_GIPHY_START,
   FETCH_GIPHY_SUCCESS,
   FETCH_GIPHY_ERROR,
+  FETCH_WEATHER_ERROR,
 } from '../actions/actionsTypes';
 
 export const initialState = {
@@ -30,6 +31,12 @@ export function giphyReducer(state = initialState, action) {
         isFetching: false,
         data: null,
         error: action.error,
+      });
+    case FETCH_WEATHER_ERROR:
+      return Object.assign({}, state, {
+        isFetching: false,
+        data: null,
+        error: null,
       });
     default:
       return state;
