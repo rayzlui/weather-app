@@ -1,8 +1,12 @@
 import * as actions from './actionsTypes';
 import { weatherKey, giphyKey } from '../APIKEYS.js';
 
-export function fetchError(error) {
-  return { type: actions.FETCH_ERROR, error: error };
+export function fetchWeatherError(error) {
+  return { type: actions.FETCH_WEATHER_ERROR, error: error };
+}
+
+export function fetchGiphyError(error) {
+  return { type: actions.FETCH_GIPHY_ERROR, error: error };
 }
 
 export function fetchWeatherStart(url) {
@@ -25,7 +29,7 @@ export function fetchWeather(location) {
     } else {
       const { status, statusText, url } = request;
       const error = { status, statusText, url };
-      dispatch(fetchError(error));
+      dispatch(fetchWeatherError(error));
     }
   };
 }
@@ -40,7 +44,7 @@ export function fetchGiphySuccess(data) {
 
 export function fetchGiphy(weather) {
   return async function fetchingGiphy(dispatch) {
-    const url = `http://api.giphy.com/v1/gifs/search?q=${weather}&api_key=${giphyKey}&limit=25`;
+    const url = `https://api.giphy.com/v1/gifs/search?q=${weather}&api_key=${giphyKey}&limit=25`;
     dispatch(fetchGiphyStart(url));
     let request = await fetch(url);
     if (request.status === 200) {
@@ -49,7 +53,7 @@ export function fetchGiphy(weather) {
     } else {
       const { status, statusText, url } = request;
       const error = { status, statusText, url };
-      dispatch(fetchError(error));
+      dispatch(fetchGiphyError(error));
     }
   };
 }

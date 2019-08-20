@@ -1,10 +1,10 @@
 import {
   FETCH_WEATHER_START,
   FETCH_WEATHER_SUCCESS,
-  FETCH_ERROR,
+  FETCH_WEATHER_ERROR,
 } from '../actions/actionsTypes';
 
-const initialState = {
+export const initialState = {
   data: null,
   isFetching: false,
   error: null,
@@ -25,7 +25,7 @@ export function weatherReducer(state = initialState, action) {
         data: action.data,
         error: null,
       });
-    case FETCH_ERROR:
+    case FETCH_WEATHER_ERROR:
       return Object.assign({}, state, {
         isFetching: false,
         data: null,
