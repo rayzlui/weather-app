@@ -44,7 +44,7 @@ export function fetchGiphySuccess(data) {
 
 export function fetchGiphy(weather) {
   return async function fetchingGiphy(dispatch) {
-    const url = `http://api.giphy.com/v1/gifs/search?q=${weather}&api_key=${giphyKey}&limit=25`;
+    const url = `https://api.giphy.com/v1/gifs/search?q=${weather}&api_key=${giphyKey}&limit=25`;
     dispatch(fetchGiphyStart(url));
     let request = await fetch(url);
     if (request.status === 200) {
