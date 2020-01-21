@@ -7,7 +7,4 @@ function mapStateToProps(state) {
   };
 }
 
-export const GiphyContainer = connect(
-  mapStateToProps,
-  null,
-)(GiphyView);
+export const GiphyContainer = connect(mapStateToProps, null)(GiphyView);

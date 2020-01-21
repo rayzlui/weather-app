@@ -7,7 +7,4 @@ function mapStateToProps(state) {
   };
 }
 
-export const RootContainer = connect(
-  mapStateToProps,
-  null,
-)(RootView);
+export const RootContainer = connect(mapStateToProps, null)(RootView);

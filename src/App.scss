@@ -96,8 +96,6 @@ $greyish: rgb(161, 161, 161);
 .container--intro{
   background-image: url("https://media0.giphy.com/media/xUPGcdhiQf2vbfDCyk/giphy.gif");
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;;
-  margin: 0;
+  background-size: 100vw 100vh;
 
 }
