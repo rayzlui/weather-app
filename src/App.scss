@@ -8,7 +8,6 @@ $greyish: rgb(161, 161, 161);
   right: 15%;
   margin: 0;
   width: 60%;
-  text-align: center;
 }
 
 
@@ -17,7 +16,6 @@ $greyish: rgb(161, 161, 161);
   height: 100vh;
   position: fixed;
   left: 0;
-  top: 0%;
   width: 25%;
   text-align: right;
   font-size: 2vh;
@@ -61,15 +59,11 @@ $greyish: rgb(161, 161, 161);
 }
 
 .searchbar--intro {
-  position: sticky;
-  top: 35%;
-  left: 35%;
   width: 25vw;
 
   height: 12vw;
   opacity: 0.8;
   background-image: linear-gradient(to left bottom, white, grey);
-  border: 1px black solid;
   border-radius: 10px;
   text-align: center;
 }
