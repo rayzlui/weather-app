@@ -7,21 +7,27 @@ $greyish: rgb(161, 161, 161);
   position: fixed;
   right: 15%;
   margin: 0;
-  width: 55%;
-  text-align: center;
+  width: 60%;
 }
 
 
 .weather-container {
   background-image: linear-gradient(to bottom left, white, blue);
-  height: 100%;
+  height: 100vh;
   position: fixed;
   left: 0;
-  top: 0%;
   width: 25%;
   text-align: right;
-  border-radius: 2px;
-  padding-left: 2px;
+  font-size: 2vh;
+}
+
+@media screen and (max-width: 800px){
+  .container .weather-container {
+    font-size: 2vw;
+  }
+  .fun-message, .search__header {
+    font-size: 3vh;
+  }
 }
 
 .searchbar {
@@ -32,8 +38,8 @@ $greyish: rgb(161, 161, 161);
   width: 15%;
   height: 100%;
   text-align: left;
-  font-size: larger;
-
+  font-size: 2vw;
+  padding-top: 35vh;
   font-family: Arial, Helvetica, sans-serif;
   input {
     width: 100%
@@ -41,57 +47,49 @@ $greyish: rgb(161, 161, 161);
 }
 
 .error-message{
-  font-size: smaller;
+  font-size: 1vw;
   color: red;
 }
 
 .fun-message{
-  font-size: smaller;
+  font-size: 1vw;
   color: purple;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
 
 .searchbar--intro {
-  position: sticky;
-  top: 0;
-  left: 35%;
-  width: 30%;
+  width: 25vw;
 
-  height: auto;
-  min-height: 15%; 
-  opacity: 0.9;
+  height: 12vw;
+  opacity: 0.8;
   background-image: linear-gradient(to left bottom, white, grey);
-  border: 1px black solid;
   border-radius: 10px;
-  box-shadow: 2px 2px 2px grey;
   text-align: center;
-  padding-bottom: 20px;
 }
 
-
+.search__header {
+  font-size: 2vw;
+}
 
 .search__input {
-  padding: 6px 10px;
-  border: 1px black solid;
   width: 80%;
   text-align: center;
-  font-size: 23px;
+  font-size: 2vw;
 
 }
 
 .container {
-  position: relative;
-  height: 640px;
-  width: 100%;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
 }
 
 .container--intro{
   background-image: url("https://media0.giphy.com/media/xUPGcdhiQf2vbfDCyk/giphy.gif");
   background-repeat: no-repeat;
-  background-size: 100%;
-  width: 100%;
-  margin: 0;
-  padding-top: 20%;
+  background-size: 100vw 100vh;
 
 }

@@ -7,7 +7,4 @@ function mapStateToProps(state) {
   };
 }
 
-export const WeatherContainer = connect(
-  mapStateToProps,
-  null,
-)(WeatherView);
+export const WeatherContainer = connect(mapStateToProps, null)(WeatherView);
